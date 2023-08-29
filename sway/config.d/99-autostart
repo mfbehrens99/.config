@@ -1,0 +1,4 @@
+exec_always copyq
+exec_always blueman-applet
+# exec_always nm-applet
+exec_always mako

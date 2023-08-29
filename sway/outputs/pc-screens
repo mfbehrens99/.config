@@ -9,6 +9,5 @@
 # Default wallpaper
 output * bg $background fill
 
-output eDP-1 resolution 1920x1200 position 1000,1728 scale 1.25
-output DP-6 resolution 3840x2160 position 0,0 scale 1.25
-output DP-7 resolution 1680x1050 position 3072,0 transform 90 scale 0.8
+output 'Samsung Electric Company U32J59x HNMN800530' resolution 3840x2160@60Hz position 0,0 scale 1.25
+output 'Dell Inc. DELL 2208WFP G456H925328M' resolution 1680x1050 position 3072,0 transform 90 scale 0.8

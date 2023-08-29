@@ -3,68 +3,13 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
+include definitions
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt and Mod4 for Super.
-set $mod Mod4
-set $alt_mod Mod1
+# include ./inputs/*
+# include ./outputs/*
+include ./config.d/*
 
-# Direction keys
-set $left Left
-set $down Down
-set $up Up
-set $right Right
-
-# Alternative direction keys
-set $left_alt h
-set $down_alt j
-set $up_alt k
-set $right_alt l
-
-# Add --to-code to bindsym, support for non-latin layouts
-set $bindsym bindsym --to-code
-
-# For user's convenience, the same for unbindsym
-set $unbindsym unbindsym --to-code
-
-# background
-set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-
-# Your preferred terminal emulator
-set $term alacritty
-
-# brightness control
-# set $brightness /usr/share/sway/scripts/brightness.sh
-# set $brightness_up $brightness up | $onscreen_bar
-# set $brightness_down $brightness down | $onscreen_bar
-
-# audio control
-# set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
-# set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
-set $volume_down $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ -2%
-set $volume_up $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ +2%
-set $volume_mute $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
-set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
-
-# clipboard history
-set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
-set $clipboard-del cliphist list | rofi -dmenu -p "Select item to delete" -lines 10 -width 35 | cliphist delete
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu rofi -show combi
-
-smart_gaps no_gaps
-smart_borders on
-gaps outer 0px
-gaps inner 0px
-
-
-include ./inputs/*
-include ./outputs/*
-include ./modes/*
+include "./`hostnamectl hostname`"
 
 # Setup waybar
 bar {

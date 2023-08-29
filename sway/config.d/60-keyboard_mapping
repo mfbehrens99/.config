@@ -1,0 +1,34 @@
+# Audio Control
+
+# --locked flags allow the buttons to be used whilst the screen is locked.
+$bindsym --locked XF86AudioRaiseVolume exec $volume_up
+
+$bindsym --locked XF86AudioLowerVolume exec $volume_down
+
+$bindsym --locked XF86AudioMute exec $volume_mute
+
+$bindsym XF86AudioMicMute exec $mic_mute
+
+
+# Media Control
+
+$bindsym --locked XF86AudioPlay exec $media_play_pause
+
+$bindsym --locked XF86AudioNext exec $media_next
+
+$bindsym --locked XF86AudioPrev exec $media_previous
+
+# Brightness
+$bindsym --locked XF86MonBrightnessUp exec $brightness_up
+
+$bindsym --locked XF86MonBrightnessDown exec $brightness_down
+
+
+$bindsym XF86Search exec $menu
+
+$bindsym XF86PowerOff exec $shutdown
+
+$bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
+
+$bindsym Print exec $screenshot
+$bindsym $mod+p exec $screenshot

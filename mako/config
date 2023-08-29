@@ -1,0 +1,12 @@
+default-timeout=10000
+font="FontAwesome, Ubuntu, Roboto, Helvetica, Arial, sans-serif"
+border-radius=10
+padding=10
+background-color=#5e81ac
+border-color=#233143
+
+[urgency=high]
+ignore-timeout=1
+
+[urgency=critical]
+ignore-timeout=1
