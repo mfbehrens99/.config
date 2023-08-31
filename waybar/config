@@ -214,7 +214,7 @@
         },
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-middle": "bash ~/.config/waybar/scripts/toggle-default-sink.sh"
+        "on-click-middle": "bash ~/.config/scripts/toggle-default-sink.sh"
     },
     "custom/playerctl": {
         "format": "{icon}  {}",
@@ -238,9 +238,9 @@
             "on": "󰃡",
             "off": "󰃠"
         },
-        "exec": "$HOME/.config/waybar/scripts/wluma.sh",
-        "on-click": "$HOME/.config/waybar/scripts/wluma.sh toggle; pkill -RTMIN+12 waybar",
-        "exec-if": "$HOME/.config/waybar/scripts/wluma.sh check",
+        "exec": "$HOME/.config/scripts/wluma.sh",
+        "on-click": "$HOME/.config/scripts/wluma.sh toggle; pkill -RTMIN+12 waybar",
+        "exec-if": "$HOME/.config/scripts/wluma.sh check",
         "signal": 12
     },
 }

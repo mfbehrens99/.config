@@ -1,14 +1,1 @@
-/Code - OSS/*
-discord/*
-dconf/*
-GitHub Desktop/*
-gtk-3.0/*
-libreoffice/*
-pulse/*
-Signal/*
-spotify/*
-transmission/*
-vlc/*
-qalculate/*
-QtProject.conf
-xournalpp/*
+*/hass_secrets.conf

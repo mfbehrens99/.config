@@ -1,0 +1,18 @@
+set $mode_hass "hass"
+set $hass ~/.config/scripts/hass.sh
+
+mode $mode_hass {
+    # Execute Scenes
+    $bindsym a mode "default", exec $hass services/scene/turn_on scene.zimmer_dunkel
+    $bindsym x mode "default", exec $hass services/scene/turn_on scene.zimmer_hell
+    $bindsym s mode "default", exec $hass services/scene/turn_on scene.schreibtisch
+    $bindsym y mode "default", exec $hass services/scene/turn_on scene.tabletmodus
+    $bindsym d mode "default", exec $hass services/scene/turn_on scene.licht_aus
+
+    $bindsym b mode "default", exec $hass services/light/toggle light.boxen
+    # Return to default mode
+    $bindsym Return mode "default"
+    $bindsym Escape mode "default"
+}
+## Launch // Resize Mode ##
+$bindsym $mod+z mode $mode_hass
