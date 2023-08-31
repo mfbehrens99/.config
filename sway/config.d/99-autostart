@@ -1,4 +1,10 @@
-exec_always copyq
 exec_always blueman-applet
-# exec_always nm-applet
+exec_always $autotiling
 exec_always mako
+exec $wlsunset
+
+exec_always swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000'

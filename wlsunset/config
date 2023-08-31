@@ -1,0 +1,24 @@
+# wlsunset configuration file
+
+# Transition duration in seconds (default: 300)
+transition_duration = 600
+
+# Daytime color temperature (default: 6500)
+daytime_temperature = 6500
+
+# Nighttime color temperature (default: 4500)
+nighttime_temperature = 4500
+
+# Location latitude (required)
+latitude = 49.0198
+
+# Location longitude (required)
+longitude = 8.4236
+
+# Start and end times for the transition (24-hour format)
+# You can define multiple time ranges with different temperatures
+# [[time_range]]
+# start_time = "18:00"
+# end_time = "20:00"
+# temperature = 5500
+

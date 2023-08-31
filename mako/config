@@ -5,6 +5,12 @@ padding=10
 background-color=#5e81ac
 border-color=#233143
 
+[app-name=blueman]
+default-timeout=1500
+
+[app-name=Spotify]
+default-timeout=3000
+
 [urgency=high]
 ignore-timeout=1
 

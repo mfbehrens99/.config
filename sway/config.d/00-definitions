@@ -47,3 +47,8 @@ set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && p
 set $media_play_pause playerctl play-pause
 set $media_next playerctl next
 set $media_previous playerctl previous
+
+set $locking swaylock
+
+set $wlsunset '[ -x "$(command -v wlsunset)" ] && $HOME/.config/waybar/scripts/sunset.sh "on"'
+set $autotiling autotiling -w 1 3 5 7 9

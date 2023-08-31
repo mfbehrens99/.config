@@ -9,5 +9,11 @@
 # Default wallpaper
 output * bg $background fill
 
-output 'Samsung Electric Company U32J59x HNMN800530' resolution 3840x2160@60Hz position 0,0 scale 1.25
-output 'Dell Inc. DELL 2208WFP G456H925328M' resolution 1680x1050 position 3072,0 transform 90 scale 0.8
+set $monitor1 'Samsung Electric Company U32J59x HNMN800530'
+set $monitor2 'Dell Inc. DELL 2208WFP G456H925328M'
+
+output $monitor1 resolution 3840x2160@60Hz position 0,0 scale 1.25
+output $monitor2 resolution 1680x1050 position 3072,0 transform 90 scale 0.8
+
+workspace $ws1 output $monitor1
+workspace $ws3 output $monitor2

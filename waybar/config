@@ -4,9 +4,28 @@
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 20, // Gaps between modules (0px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/scratchpad", "wlr/taskbar"],
-    "modules-center": ["sway/mode", "sway/window"],
-    "modules-right": ["custom/playerctl", "battery", "cpu", "temperature", "memory", "pulseaudio", "network", "bluetooth", "tray", "clock"],
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "sway/mode",
+        "sway/window"
+    ],
+    "modules-right": [
+        "custom/playerctl",
+        "battery",
+        "cpu",
+        "temperature",
+        "memory",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "custom/adaptive-light",
+        "tray",
+        "clock"
+    ],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -24,12 +43,12 @@
     //     }
     // },
     "wlr/taskbar": {
-      "all-outputs": false,
-      "format": "{icon}",
-      "icon-theme": "Papirus-Dark",
-      "tooltip": false,
-      "on-click": "activate",
-      "on-click-middle": "close",
+        "all-outputs": false,
+        "format": "{icon}",
+        "icon-theme": "Papirus-Dark",
+        "tooltip": false,
+        "on-click": "activate",
+        "on-click-middle": "close",
     },
     "keyboard-state": {
         "numlock": true,
@@ -46,7 +65,10 @@
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
@@ -103,7 +125,13 @@
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "cpu": {
         "interval": 1,
@@ -137,16 +165,15 @@
     },
     "bluetooth": {
         "format": " {status}",
-	    "format-disabled": "", // an empty format will hide the module
-	    "format-connected": " {num_connections}",
-	    "tooltip-format": "{device_alias}",
-	    "tooltip-format-connected": "{device_enumerate}",
-	    "tooltip-format-enumerate-connected": " {device_alias}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias}",
         "on-click": "blueman-manager",
         // "on-click-right": "blueman-manager",
-
-      },
-      "pulseaudio": {
+    },
+    "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
@@ -160,9 +187,13 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
-	    "on-click": "pavucontrol",
+        "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "bash ~/.config/waybar/scripts/toggle-default-sink.sh"
     },
@@ -173,11 +204,24 @@
             "Playing": "",
             "Paused": "",
         },
-        "max-length":70,
+        "max-length": 70,
         "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl play-pause",
-        "on-click-middle":"playerctl previous",
-        "on-click-right":"playerctl next"
-        
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next"
+    },
+    "custom/adaptive-light": {
+        "interval": "once",
+        "tooltip": true,
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "on": "󰃡",
+            "off": "󰃠"
+        },
+        "exec": "$HOME/.config/waybar/scripts/wluma.sh",
+        "on-click": "$HOME/.config/waybar/scripts/wluma.sh toggle; pkill -RTMIN+12 waybar",
+        "exec-if": "$HOME/.config/waybar/scripts/wluma.sh check",
+        "signal": 12
     },
 }
