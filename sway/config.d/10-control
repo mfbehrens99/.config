@@ -9,8 +9,8 @@ $bindsym $mod+Return exec $term
 $bindsym $mod+Shift+q kill
 
 ## Launch // Open launcher ##
-$bindsym $mod+d exec $menu
-$bindsym $alt_mod+space exec $menu
+$bindsym $mod+d exec $menu_exec
+$bindsym $alt_mod+space exec $menu_exec
 
 ## Launch // Open clipboard ##
 $bindsym $mod+Shift+v exec $clipboard
@@ -67,6 +67,9 @@ $bindsym $mod+Alt+$up_alt move workspace to output up
 
 ## Navigation // Switch to the last recently used workspace ##
 $bindsym $alt_mod+Tab workspace back_and_forth
+
+bindsym $mod+control+Right workspace next
+bindsym $mod+control+Left workspace prev
 
 #
 # Workspaces:
@@ -140,8 +143,9 @@ $bindsym $mod+space focus mode_toggle
 ## Navigation // Swap focus to the parent window ##
 $bindsym $mod+a focus parent
 
-# $bindsym $mod+m bar hidden_state toggle
+$bindsym $mod+m bar hidden_state toggle
 
+$bindsym $mod+c exec $calculator
 
-# default_border pixel 1
-# hide_edge_borders smart
+# Copy paste
+$bindsym $mod+less exec $clipboard
