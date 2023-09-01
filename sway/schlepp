@@ -1,0 +1,2 @@
+include ./inputs/default-touchpad
+include ./outputs/laptop-screen

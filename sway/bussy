@@ -1,2 +1,1 @@
 include ./outputs/pc-screens
-set $mako_monitor $monitor2

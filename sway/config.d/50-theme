@@ -14,3 +14,6 @@ exec_always {
   gsettings set $gnome-schema icon-theme Papirus-Dark                                              
   gsettings set $gnome-schema cursor-theme Adwaita                                                 
 }
+
+# Default wallpaper
+output * bg $background fill
