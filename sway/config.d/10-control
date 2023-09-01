@@ -149,3 +149,5 @@ $bindsym $mod+c exec $calculator
 
 # Copy paste
 $bindsym $mod+less exec $clipboard
+
+# focus_on_window_activation focus

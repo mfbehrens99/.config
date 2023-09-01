@@ -2,9 +2,25 @@
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+
 input type:touchpad {
       dwt enabled
       tap enabled
       natural_scroll enabled
+      click_method button_areas
+      # click_method clickfinger
+      # middle_emulation enabled
+      drag enabled
+      scroll_factor .5
+      scroll_method two_finger
 }
 
+bindgesture {
+  swipe:3:left  exec $media_previous
+  swipe:3:down  exec $volume_mute
+  swipe:3:up    exec $volume_unmute
+  swipe:3:right exec $media_next
+  hold:3        exec $media_play_pause
+  swipe:4:up    exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  swipe:4:down  exec pactl set-sink-mute   @DEFAULT_SINK@   toggle
+}

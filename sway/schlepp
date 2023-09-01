@@ -1,2 +1,3 @@
 include ./inputs/default-touchpad
+include ./inputs/touchscreen
 include ./outputs/laptop-screen

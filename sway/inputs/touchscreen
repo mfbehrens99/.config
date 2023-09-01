@@ -1,2 +1,99 @@
-input "1386:18667:Wacom_HID_48EB_Finger" map_to_output eDP-1
+input "1386:18667:Wacom_HID_48EB_Finger" {
+    map_to_output eDP-1
+    events enabled
+}
 input "1386:18667:Wacom_HID_48EB_Pen" map_to_output eDP-1
+
+# touch {
+#     set along_the_top "20px x 1.0 @ .5 x 0"
+#     set bottom_half "1.0 x .5 @ 0 x .5"
+#     set right_half ".5 x 1.0 @ .5 x 0"
+
+#     # five finger tap to spawn a terminal
+#     gesture exec $term {
+#         down 5
+#         delay < 10ms
+#         up all # optional, all guestures implicitly end with "up all"
+#         # equivalent shorter version:
+#         # tap 5
+#     }
+
+#     # five finger long press to lock screen
+#     gesture exec swaylock {
+#         down 5
+#         50ms < delay < 1s
+#     }
+
+#     # slide along the top to right to spawn dmenu
+#     gesture exec dmenu_run {
+#         down 1 $along_the_top
+#         horiz +100px < move
+#     }
+
+#     # two finger slide across bottom half of window to splith
+#     gesture splith {
+#         down --window 2 $bottom_half
+#         horiz +/-0.5 < move
+#     }
+#     gesture splitv {
+#         down --window 2 $top_half
+#         vert +/-0.5 < move
+#     }
+
+#     # rotate screen with 5 finger rotate
+#     gesture output LVDS-1 transform +90 {
+#         down 5
+#         45deg < rotation < 90deg
+#         up all
+#     }
+
+#     # drag from right/left to switch workspaces
+#     # --create to make a new one if you hit the end
+#     gesture workspace --create next_on_output {
+#         down 1 "100px x 1.0 @ 1.0-100px x 0"
+#         horiz -0.25 < move
+#     }
+
+#     gesture workspace --create prev_on_output {
+#         down 1 "100px x 1.0 @ 0 x 0"
+#         horiz +0.25 < move
+#     }
+
+#     # 3 finger drag up to float windows
+#     gesture floating enable {
+#         down 3 $bottom_half
+#         move $top_half
+#     }
+
+#     # 3 finger drag down to float windows
+#     gesture floating disable {
+#         down 3 $top_half
+#         move $bottom_half
+#     }
+
+#     # 3 finger drag to move windows
+#     gesture {
+#         down --window 3
+#         # move at least 50px to start an interactive move
+#         # calculated from the average position of your fingers
+#         50px < move --attach
+#     }
+
+#     # 3 finger pinch to resize windows
+#     gesture {
+#         down --window 3
+#         50px < expand/shrink --attach
+#     }
+
+#     # 3 finger rotate to rotate floating windows
+#     gesture floating enable {
+#         down [floating] 3
+#         15deg < rotate --attach
+#     }
+
+#     # Except gedit which I want to resize with rotation for some reason
+#     gesture {
+#         down [appid="gedit"] 3
+#         15deg < rotate --attach
+#     }
+# }

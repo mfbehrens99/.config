@@ -2,8 +2,8 @@ ignore-empty-password
 font=Ubuntu
 
 clock
-timestr=%R
-datestr=%a, %e of %B
+timestr=%H:%M:%S
+datestr=%d. %B %Y
 
 screenshots
 

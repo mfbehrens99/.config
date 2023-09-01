@@ -1,7 +1,3 @@
 autotiling
-github-desktop-bin
 swaylock-effects-git
-wev
 wlsunset
-wluma-git
-yay-bin

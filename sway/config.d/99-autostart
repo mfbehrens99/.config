@@ -1,6 +1,6 @@
 exec_always blueman-applet
 exec_always $autotiling
-exec_always mako --output $mako_monitor
+exec_always mako
 exec $wlsunset
 
 exec_always swayidle -w \

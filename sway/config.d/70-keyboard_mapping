@@ -5,7 +5,7 @@ $bindsym --locked XF86AudioRaiseVolume exec $volume_up
 
 $bindsym --locked XF86AudioLowerVolume exec $volume_down
 
-$bindsym --locked XF86AudioMute exec $volume_mute
+$bindsym --locked XF86AudioMute exec $volume_mute_toggle
 
 $bindsym XF86AudioMicMute exec $mic_mute
 
@@ -26,7 +26,8 @@ $bindsym --locked XF86MonBrightnessDown exec $brightness_down
 
 $bindsym XF86Search exec $menu
 
-$bindsym XF86PowerOff exec $shutdown
+# Powerbutton is handled by systemctl
+# $bindsym XF86PowerOff mode $mode_shutdown
 
 $bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
 

@@ -1,13 +1,5 @@
-## Installed Packages
-```
-pacman -Qqe > ~/dotfiles/pacman.txt
-```
+# DOTFILES
 
-```
-pacman -Qqme > ~/dotfiles/yay.txt
-```
-
+## System maintenance
 ### Delete unused dependencies
-```
-pacman -Rsn $(pacman -Qdtq)
-```
+```pacman -Rsn $(pacman -Qdtq)```

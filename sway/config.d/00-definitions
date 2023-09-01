@@ -38,9 +38,13 @@ set $clipboard-del cliphist list | $menu -dmenu -p "Select item to delete" -line
 
 set $screenshot grim -g "$(slurp)" -t png | wl-copy -t image/png
 
-set $volume_down $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ -2%
-set $volume_up $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ +2%
-set $volume_mute $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
+set $onscreen_bar xob |
+
+set $volume_down $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ -2% & pactl set-sink-mute @DEFAULT_SINK@ off
+set $volume_up $onscreen_bar pactl set-sink-volume @DEFAULT_SINK@ +2% & pactl set-sink-mute @DEFAULT_SINK@ off
+set $volume_mute pactl set-sink-mute @DEFAULT_SINK@ on
+set $volume_unmute pactl set-sink-mute @DEFAULT_SINK@ off
+set $volume_mute_toggle $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
 set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
 set $media_play_pause playerctl play-pause

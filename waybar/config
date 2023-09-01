@@ -132,9 +132,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon}    {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -168,8 +168,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ifname}",
+        "format-wifi": " ",
+        "format-ethernet": "",
         "format-linked": "",
         "format-disconnected": "⚠",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
@@ -177,7 +177,7 @@
         "on-click": "nm-connection-editor"
     },
     "bluetooth": {
-        "format": " {status}",
+        "format": "",
         "format-disabled": "", // an empty format will hide the module
         "format-connected": " {num_connections}",
         "tooltip-format": "{device_alias}",
@@ -193,9 +193,9 @@
         "on-scroll-down": "swaymsg exec \\$brightness_down"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": " Muted",
+        "format-muted": "",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
         "scroll-step": 5,
