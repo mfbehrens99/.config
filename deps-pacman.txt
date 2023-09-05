@@ -16,7 +16,7 @@ opendoas
 pavucontrol
 pulseaudio
 qalculate-qt
-rofi
+wofi
 slurp
 sway
 swaybg
