@@ -3,10 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-include definitions
 
-# include ./inputs/*
-# include ./outputs/*
 include ./config.d/*
 
 include "./`hostnamectl hostname`"
@@ -17,4 +14,3 @@ bar {
 }
 
 exec wl-paste --watch cliphist store
-# exec logid -c ~/.config/logid.cfg

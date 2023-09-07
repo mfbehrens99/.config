@@ -16,7 +16,7 @@ opendoas
 pavucontrol
 pulseaudio
 qalculate-qt
-wofi
+rofi
 slurp
 sway
 swaybg
@@ -26,3 +26,4 @@ ttf-font-awesome
 ttf-nerd-fonts-symbols
 waybar
 wl-clipboard
+xorg-xwayland

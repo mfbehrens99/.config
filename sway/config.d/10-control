@@ -9,8 +9,8 @@ $bindsym $mod+Return exec $term
 $bindsym $mod+Shift+q kill
 
 ## Launch // Open launcher ##
-$bindsym $mod+d exec $menu_exec
-$bindsym $alt_mod+space exec $menu_exec
+$bindsym $mod+d exec $menu
+$bindsym $alt_mod+space exec $menu
 
 ## Launch // Open clipboard ##
 $bindsym $mod+Shift+v exec $clipboard

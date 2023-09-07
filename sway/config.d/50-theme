@@ -9,10 +9,10 @@ titlebar_padding 1
 set $gnome-schema org.gnome.desktop.interface                                                      
                                                                                                    
 exec_always {                                                                                      
-  gsettings set $gnome-schema gtk-theme Adwaita                                                    
-  gsettings set $gnome-schema gtk-application-prefer-dark-theme true                               
-  gsettings set $gnome-schema icon-theme Papirus-Dark                                              
-  gsettings set $gnome-schema cursor-theme Adwaita                                                 
+  gsettings set $gnome-schema gtk-theme Adwaita
+  gsettings set $gnome-schema gtk-application-prefer-dark-theme true
+  gsettings set $gnome-schema icon-theme Papirus-Dark
+  gsettings set $gnome-schema cursor-theme Adwaita
 }
 
 # Default wallpaper

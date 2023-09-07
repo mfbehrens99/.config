@@ -29,12 +29,11 @@ set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 set $term foot
 
 # Your preferred application launcher
-set $menu rofi
-set $menu_exec $menu -show combi | xargs swaymsg exec --
+set $menu rofi -show combi | xargs swaymsg exec --
 
 # clipboard history
-set $clipboard cliphist list | $menu -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
-set $clipboard-del cliphist list | $menu -dmenu -p "Select item to delete" -lines 10 -width 35 | cliphist delete
+set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
+set $clipboard-del cliphist list | rofi -dmenu -p "Select item to delete" -lines 10 -width 35 | cliphist delete
 
 set $screenshot grim -g "$(slurp)" -t png | wl-copy -t image/png
 
