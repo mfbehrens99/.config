@@ -1,3 +1,0 @@
-pacman -S git openssh opendoas firefox foot
-
-systemctl enable --now seatd
