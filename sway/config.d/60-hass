@@ -3,18 +3,18 @@ set $hass ~/.config/scripts/hass.sh
 
 mode $mode_hass {
     # Execute Scenes
-    $bindsym a mode "default", exec $hass services/scene/turn_on scene.zimmer_dunkel
-    $bindsym x mode "default", exec $hass services/scene/turn_on scene.zimmer_hell
-    $bindsym s mode "default", exec $hass services/scene/turn_on scene.schreibtisch
-    $bindsym z mode "default", exec $hass services/scene/turn_on scene.tabletmodus
-    $bindsym d mode "default", exec $hass services/scene/turn_on scene.licht_aus
+    $bindsym --locked a mode "default", exec $hass services/scene/turn_on scene.zimmer_dunkel
+    $bindsym --locked x mode "default", exec $hass services/scene/turn_on scene.zimmer_hell
+    $bindsym --locked s mode "default", exec $hass services/scene/turn_on scene.schreibtisch
+    $bindsym --locked z mode "default", exec $hass services/scene/turn_on scene.tabletmodus
+    $bindsym --locked d mode "default", exec $hass services/scene/turn_on scene.licht_aus
 
-    $bindsym b mode "default", exec $hass services/light/toggle light.boxen
-    $bindsym less mode "default", exec $hass services/light/toggle light.boxen
+    $bindsym --locked b mode "default", exec $hass services/light/toggle light.boxen
+    $bindsym --locked less mode "default", exec $hass services/light/toggle light.boxen
     
     # Return to default mode
-    $bindsym Return mode "default"
-    $bindsym Escape mode "default"
+    $bindsym --locked Return mode "default"
+    $bindsym --locked Escape mode "default"
 }
 ## Launch // Resize Mode ##
-$bindsym $mod+z mode $mode_hass
+$bindsym --locked $mod+z mode $mode_hass

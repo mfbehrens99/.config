@@ -1,7 +1,17 @@
 exec_always blueman-applet
+exec_always nm-applet
 exec_always $autotiling
 exec_always mako
 exec $wlsunset
+
+workspace $ws1; exec firefox
+
+workspace $ws3; workspace_layout tabbed
+workspace $ws3; exec whatsapp-for-linux
+workspace $ws3; exec telegram-desktop
+workspace $ws3; exec discord
+workspace $ws3; splitv; exec spotify-launcher
+
 
 exec_always swayidle -w \
 	timeout 300 'swaylock -f -c 000000' \
