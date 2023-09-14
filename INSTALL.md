@@ -36,3 +36,7 @@ if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec sway
 fi
 ```
+
+## Dotfiles
+
+``` ln -s ~/dotfiles/{gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset} ~/.config```
