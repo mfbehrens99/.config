@@ -18,3 +18,13 @@ mode $mode_hass {
 }
 ## Launch // Resize Mode ##
 $bindsym --locked $mod+z mode $mode_hass
+
+set $mode_nosway "nosway"
+
+mode $mode_nosway {
+    # Execute Scenes
+
+    $bindsym $mod+Escape mode "default"
+}
+## Launch // Resize Mode ##
+$bindsym $mod+o mode $mode_nosway
