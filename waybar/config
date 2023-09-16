@@ -15,6 +15,7 @@
         "sway/window"
     ],
     "modules-right": [
+        "custom/weather",
         "custom/playerctl",
         "battery",
         "cpu",
@@ -84,32 +85,6 @@
         ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -196,8 +171,8 @@
         "format": "{icon}  {volume}%",
         "tooltip": false,
         "format-muted": "",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "on-scroll-up": "swaymsg exec \\$volume_up",
+        "on-scroll-down": "swaymsg exec \\$volume_down",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
@@ -213,7 +188,7 @@
             ]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "swaymsg exec \\$volume_mute_toggle",
         "on-click-middle": "bash ~/.config/scripts/toggle-default-sink.sh"
     },
     "custom/playerctl": {
@@ -243,4 +218,11 @@
         "exec-if": "$HOME/.config/scripts/wluma.sh check",
         "signal": 12
     },
+    "custom/weather": {
+        "exec": "bash ~/.config/scripts/weather.sh Karlsruhe+Germany",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600
+    }
 }

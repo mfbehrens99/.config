@@ -39,4 +39,4 @@ fi
 
 ## Dotfiles
 
-``` ln -s ~/dotfiles/{gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset} ~/.config```
+```ln -s ~/dotfiles/{gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swayidle,swaylock,waybar,wlsunset} ~/.config```

@@ -1,0 +1,6 @@
+# ~/.config/swayidle/config
+
+timeout 300 'swaylock -f -c 000000'
+timeout 600 'swaymsg "output * dpms off"'
+after-resume 'swaymsg "output * dpms on"'
+before-sleep 'swaylock -f -c 000000'

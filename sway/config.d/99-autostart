@@ -7,14 +7,10 @@ exec $wlsunset
 workspace $ws1; exec firefox
 
 workspace $ws3; workspace_layout tabbed
-workspace $ws3; exec whatsapp-for-linux
+workspace $ws3; exec whatsdesk
 workspace $ws3; exec telegram-desktop
 workspace $ws3; exec discord
 workspace $ws3; splitv; exec spotify-launcher
 
 
-exec_always swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 600 'swaymsg "output * dpms off"' \
-		resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -f -c 000000'
+exec_always $locking
