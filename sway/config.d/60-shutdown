@@ -5,6 +5,7 @@ set $mode_shutdown "\
 <span foreground='$color5'> \
 <span foreground='$color10'>(<b>h</b>)</span>hibernate \
 <span foreground='$color10'>(<b>l</b>)</span>lock \
+<span foreground='$color10'>(<b>c</b>)</span>change user \
 <span foreground='$color10'>(<b>e</b>)</span>logout \
 <span foreground='$color10'>(<b>r</b>)</span>reboot \
 <span foreground='$color10'>(<b>u</b>)</span>suspend \
@@ -31,6 +32,9 @@ mode --pango_markup $mode_shutdown {
 
     # reboot
     $bindsym r exec $purge_cliphist; exec systemctl reboot
+
+    # change user
+    $bindsym c mode "default", exec gdmflexiserver --startnew
 
     # Return to default mode.
     $bindsym Escape mode "default"

@@ -1,0 +1,11 @@
+[Default Applications]
+video/mpeg=vlc.desktop
+application/vnd.rar=org.gnome.Nautilus.desktop
+application/zip=org.gnome.Nautilus.desktop
+application/xml=code-oss.desktop
+
+[Added Associations]
+video/mpeg=vlc.desktop;
+application/x-zerosize=code-oss.desktop;
+application/zip=org.gnome.Nautilus.desktop;
+application/xml=code-oss.desktop;

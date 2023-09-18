@@ -1,4 +1,5 @@
 audacity
+baobab
 gnucash
 python
 telegram-desktop
@@ -9,11 +10,13 @@ lib32-systemd
 code
 discord
 firefox
+less
 libreoffice-fresh
 man-db
 nautilus
 spotify-launcher
 swappy
+syncthing
+thunderbird
 vim
 vlc
-thunderbird

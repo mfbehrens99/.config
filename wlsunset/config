@@ -7,7 +7,7 @@ transition_duration = 600
 daytime_temperature = 6500
 
 # Nighttime color temperature (default: 4500)
-nighttime_temperature = 4500
+nighttime_temperature = 5000
 
 # Location latitude (required)
 latitude = 49.0198

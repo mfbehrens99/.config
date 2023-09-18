@@ -13,4 +13,15 @@ workspace $ws3; exec discord
 workspace $ws3; splitv; exec spotify-launcher
 
 
-exec_always $locking
+# Idle
+exec_always swayidle -w \
+               timeout 300 'swaylock -f -c 000000' \
+               timeout 600 'swaymsg "output * dpms off"' \
+               resume 'swaymsg "output * dpms on"' \
+               before-sleep 'swaylock -f -c 000000'
+
+# xwayland version
+for_window [class="Firefox"] inhibit_idle fullscreen
+
+# wayland vesion
+for_window [app_id="firefox"] inhibit_idle fullscreen
