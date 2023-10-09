@@ -5,6 +5,7 @@ bluez-utils
 btrfs-progs
 cliphist
 foot
+gdm
 git
 grim
 htop
@@ -15,6 +16,7 @@ mako
 network-manager-applet
 opendoas
 pavucontrol
+polkit-gnome
 pulseaudio
 qalculate-qt
 rofi

@@ -3,6 +3,7 @@ exec_always nm-applet
 exec_always $autotiling
 exec_always mako
 exec $wlsunset
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 workspace $ws1; exec firefox
 
