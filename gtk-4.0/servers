@@ -3,11 +3,12 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="network:///smb:/shares.hadiko.de" added="2023-09-17T13:24:51.539422Z" modified="2023-09-17T13:24:51.539424Z" visited="2023-09-17T13:24:51.539423Z">
+  <bookmark href="smb://apollo.hadiko.de/" added="2023-11-21T19:54:51.553732Z" modified="2023-11-21T19:54:51.553735Z" visited="2023-11-21T19:54:51.553733Z">
+    <title>Windows-Speicher auf apollo.hadiko.de</title>
     <info>
       <metadata owner="http://freedesktop.org">
         <bookmark:applications>
-          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-09-17T13:24:51.539424Z" count="1"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-11-21T19:54:51.553734Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

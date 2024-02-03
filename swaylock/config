@@ -1,4 +1,6 @@
 ignore-empty-password
+grace=10
+
 font=Ubuntu
 
 clock
@@ -7,11 +9,12 @@ datestr=%d. %B %Y
 
 screenshots
 
-fade-in=0.2
+fade-in=0.5
 
 effect-blur=20x2
 #effect-greyscale
 effect-scale=0.3
+effect-vignette=0.4:1
 
 indicator
 indicator-radius=240

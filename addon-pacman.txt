@@ -24,5 +24,4 @@ thunderbird
 ufraw-thumbnailer
 vim
 vlc
-wine
 xournalpp

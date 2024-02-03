@@ -5,24 +5,18 @@ exec_always mako
 exec $wlsunset
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-workspace $ws1; exec firefox
+exec "swaymsg exec workspace $ws1; exec firefox"
 
-workspace $ws3; workspace_layout tabbed
-workspace $ws3; exec whatsdesk
-workspace $ws3; exec telegram-desktop
-workspace $ws3; exec discord
-workspace $ws3; splitv; exec spotify-launcher
+exec sleep .3 && swaymsg exec "workspace $ws0; exec whatsdesk; exec telegram-desktop; exec discord;exec spotify-launcher"
 
 
 # Idle
 exec_always swayidle -w \
-               timeout 300 'swaylock -f -c 000000' \
+               timeout 300 "$locking" \
                timeout 600 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
-               before-sleep 'swaylock -f -c 000000'
+               before-sleep "$locking"
 
-# xwayland version
-for_window [class="Firefox"] inhibit_idle fullscreen
 
-# wayland vesion
-for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [class="Firefox"] inhibit_idle fullscreen # xwayland version
+for_window [app_id="firefox"] inhibit_idle fullscreen # wayland vesion

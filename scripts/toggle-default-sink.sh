@@ -1,43 +1,40 @@
-#!/usr/bin/env bash
+#! /usr/bin/env sh
 
-# Toggle between two pulseaudio sinks
+# Removing pulseaudio means removing pacmd, so this is an attempt at switching the default via pactl instead.
 
-# Requires
-# load-module module-stream-restore restore_device=false
-# to be set in /etc/pulse/default.pa
+# This script switches between whatever sinks exist.
+# Sinks can be specified by name or index. Index changes sometimes when you disconnect and reconnect, restart or whatever, so names are better as they are persistent.
+# Annoyingly the command used to switch audio over to a new sink cannot take a name as its argument, otherwise I'd only need the name here.
 
-# Current default sink
-CURR_SINK_INDEX="$(pacmd list-sinks | grep \* | awk '{print $3}')"
-CURR_SINK_NAME="$(pacmd list-sinks | grep \* -A 1 | awk 'FNR == 2 {print $2}' | sed 's/[<>]//g')"
+# TODO: Trigger a zenity or dmenu dialog with entr that asks whether to switch monitor and/or sound to hdmi? Could do
+# the same for mounting.
 
-echo "Current default sink: ${CURR_SINK_INDEX} ${CURR_SINK_NAME}"
+get_all_sinks() {
+  pactl list short sinks | cut -f 2
+}
 
-CONFIG="$HOME/.config/toggle_sink.conf"
+get_default_sink() {
+  #pw-play --list-targets | grep \* | tail -n 1 | cut -d' ' -f 2 | cut -d : -f 1
+  pactl info | grep 'Default Sink' | cut -d':' -f 2
+}
 
-# Source config file if it exists
-[ -f "${CONFIG}" -a -r "${CONFIG}" ] && . "${CONFIG}"
-
-# Sinks to switch between
-# Use index 0 and 1 unless config defined it
-TOGGLE_SINKS="${TOGGLE_SINKS:-0 1}"
-
-# Use arguments instead if they are provided
-[ $# -ne 0 ] && [ "$*" != "" ] && TOGGLE_SINKS="${@}"
-
-for toggle_sink in ${TOGGLE_SINKS}; do
-    if [ "${toggle_sink}" != "${CURR_SINK_INDEX}" ] && [ "${toggle_sink}" != "${CURR_SINK_NAME}" ]; then
-        # New default sink
-        SINK="${toggle_sink}"
-        echo "New default sink: ${SINK}"
-        break
-    fi
+DEF_SINK=$(get_default_sink)
+for SINK in $(get_all_sinks) ; do
+  [ -z "$FIRST" ] && FIRST=$SINK # Save the first index in case the current default is the last in the list
+  # get_default_sink currently returns the index with a leading space
+  if [ " $SINK" = "$DEF_SINK" ]; then
+    NEXT=1;
+  # Subsequent pass, don't need continue above
+  elif [ -n "$NEXT"  ]; then
+    NEW_DEFAULT_SINK=$SINK
+    break
+  fi
 done
 
-# Driver to identify sink inputs to move
-SINK_INPUT_DRIVER="protocol-native.c"
-# Sink inputs to move
-SINK_INPUTS="$(pacmd list-sink-inputs | grep "$SINK_INPUT_DRIVER" -B 1 | awk '$1 == "index:" {print $2}')"
+# Don't particularly like this method of making it circular, but...
+[ -z "$NEW_DEFAULT_SINK" ] && NEW_DEFAULT_SINK=$FIRST
 
-pacmd set-default-sink "${SINK}" && [ -n "$SINK_INPUTS" ] && for i in ${SINK_INPUTS}; do
-    pacmd move-sink-input "${i}" "${SINK}"
-done
+# Set default sink for new audio playback
+pactl set-default-sink "$NEW_DEFAULT_SINK"
+
+# notify-send --expire-time 1350 "Selected output sink: $($SCRIPT_DIR/print-default-sink.sh)"

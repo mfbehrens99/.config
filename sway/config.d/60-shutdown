@@ -17,6 +17,7 @@ set $purge_cliphist [ $purge_cliphist_logout == 'true' ] && rm -f $HOME/.cache/c
 mode --pango_markup $mode_shutdown {
     # lock
     $bindsym l mode "default", exec $locking
+    $bindsym Shift+l mode "default", exec $lockman
 
     # logout
     $bindsym e exec $purge_cliphist; exec loginctl terminate-user $USER
