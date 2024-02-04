@@ -6,13 +6,13 @@ btrfs-progs
 cliphist
 gdm
 git
+gnome-console
 grim
 gvfs-mtp
 gvfs-smb
 htop
 imv
 iwd
-kgx
 less
 mako
 nautilus
