@@ -44,7 +44,7 @@ fi
 
 Create symlinks from the dotfiles repository to your `.config` folder
 ```shell
-ln -s ~/dotfiles/{gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,syncthing,waybar,wlsunset,mimeapps.list,user-dirs.dirs,user-dirs.locale} ~/.config
+ln -s ~/dotfiles/{gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset,mimeapps.list,user-dirs.dirs,user-dirs.locale} ~/.config
 ```
 
 ## Snapper

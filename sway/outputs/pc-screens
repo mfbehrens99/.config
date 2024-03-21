@@ -12,7 +12,6 @@ set $monitor2 'Dell Inc. DELL 2208WFP G456H925328M'
 
 output $monitor1 resolution 3840x2160@60Hz position 0,0 scale 1.25
 output $monitor2 resolution 1680x1050 position 3072,0 transform 90 scale 0.8
-# output HEADLESS-1 resolution 1920x1200 position 1050,1728 scale 1.51
 
 workspace $ws1 output $monitor1
 workspace $ws0 output $monitor2
