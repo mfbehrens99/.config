@@ -17,7 +17,7 @@ mode $mode_hass {
     $bindsym --locked Escape mode "default"
 }
 ## Launch // Resize Mode ##
-$bindsym --locked $mod+z mode $mode_hass
+$bindsym --locked $mod+y mode $mode_hass
 
 set $mode_nosway "nosway"
 

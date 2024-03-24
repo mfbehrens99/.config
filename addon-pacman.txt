@@ -5,13 +5,11 @@ discord
 ffmpegthumbs
 firefox
 gnucash
-gvfs-smb
 josm-stable
 keepassxc
 lib32-systemd
 libreoffice-fresh
 man-db
-nautilus
 python
 python-virtualenv
 qmapshack
