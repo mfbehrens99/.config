@@ -52,6 +52,10 @@ set $media_play_pause playerctl play-pause
 set $media_next playerctl next
 set $media_previous playerctl previous
 
+set $bctl brightnessctl
+set $brightness_up $bctl s +5%
+set $brightness_down $bctl s 5%-
+
 set $wlsunset [ -x "$(command -v wlsunset)" ] && $HOME/.config/scripts/sunset.sh "on"
 set $autotiling autotiling -w 1 3 5 7 9
 
