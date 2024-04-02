@@ -11,8 +11,9 @@ exec sleep .3 && swaymsg exec "workspace $ws0; exec whatsdesk; exec telegram-des
 
 
 # Idle
-exec_always swayidle -w \
-               timeout 300 "$locking" \
+exec_always pgrep swayidle || swayidle -w \
+               timeout 400 'notify-send -t 5000 "PC wird gesperrt" "Der PC wird in 1 Minute gesperrt."' \
+               timeout 500 "$locking" \
                timeout 600 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
                before-sleep "$locking"
