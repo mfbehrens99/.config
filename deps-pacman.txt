@@ -2,6 +2,7 @@ bash-completion
 blueman
 bluez
 bluez-utils
+brightnessctl
 btrfs-progs
 cliphist
 gdm

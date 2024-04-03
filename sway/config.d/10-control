@@ -147,12 +147,10 @@ $bindsym $mod+a focus parent
 
 $bindsym $mod+m bar hidden_state toggle
 
-$bindsym $mod+c exec $calculator
-
 # Copy paste
 $bindsym $mod+less exec $clipboard
 
+# Hotkeys for programs
 $bindsym $mod+e exec $files
 $bindsym $mod+l exec $lockman
-
-# focus_on_window_activation focus
+$bindsym $mod+c exec $calculator
