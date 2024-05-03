@@ -23,7 +23,7 @@ set $bindsym bindsym --to-code
 set $unbindsym unbindsym --to-code
 
 # background
-set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+set $background /home/michi/Bilder/Background/IMG_0030.jpg
 
 # Your preferred terminal emulator
 set $term kgx
@@ -32,7 +32,7 @@ set $term kgx
 set $menu rofi -show combi | xargs swaymsg exec --
 
 # Locking
-set $locking swaylock -f -c 000000
+set $locking loginctl lock-session && swaylock -f -c 000000
 set $lockman exec bash ~/.config/scripts/lockman.sh
 
 # clipboard history
