@@ -10,11 +10,13 @@ assign [class="whatsdesk"] workspace $ws0
 assign [class="Signal"] workspace $ws0
 assign [app_id="org.telegram.desktop"] workspace $ws0
 assign [class="discord"] workspace $ws0
+assign [class="Element"] workspace $ws0
 
 exec whatsdesk
 exec signal-desktop
 exec telegram-desktop
 exec discord
+exec element-desktop
 
 assign [class="firefox"] workspace $ws1
 exec firefox
@@ -22,6 +24,8 @@ exec firefox
 assign [class="thunderbird"] workspace $ws2
 exec thunderbird
 
+assign [class="Logseq"] workspace $ws3
+exec logseq
 
 # Idle
 exec_always pgrep swayidle || swayidle -w \
