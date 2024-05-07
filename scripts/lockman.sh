@@ -5,6 +5,6 @@ swayidle \
     resume 'swaymsg "output * dpms on"' &
 # Locks the screen immediately
 loginctl lock-session
-swaylock -f -c 000000
+sleep 1 && swaylock -f -c 000000
 # Kills last background task so idle timer doesn't keep running
 kill %%
