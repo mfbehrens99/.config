@@ -32,8 +32,8 @@ set $term kgx
 set $menu rofi -show combi | xargs swaymsg exec --
 
 # Locking
-set $locking loginctl lock-session && swaylock -f -c 000000
-set $lockman exec bash ~/.config/scripts/lockman.sh
+set $locking loginctl lock-session && swaylock -f -c 000000 -i $background
+# set $lockman exec bash ~/.config/scripts/lockman.sh
 
 # clipboard history
 set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy

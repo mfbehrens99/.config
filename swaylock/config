@@ -6,8 +6,6 @@ clock
 timestr=%H:%M:%S
 datestr=%d. %B %Y
 
-screenshots
-
 fade-in=0.5
 
 effect-blur=20x2
