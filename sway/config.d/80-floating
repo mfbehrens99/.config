@@ -6,5 +6,3 @@ for_window [app_id="org.keepassxc.KeePassXC" title="KeePassXC - Passkey-Anmelded
 
 $bindsym --release Escape [app_id="blueman-manager" con_id=__focused__] kill; \
     [app_id="pavucontrol" con_id=__focused__] kill
-
-assign [class="Firefox"] workspace $ws1

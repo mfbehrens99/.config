@@ -33,7 +33,7 @@ set $menu rofi -show combi | xargs swaymsg exec --
 
 # Locking
 set $locking loginctl lock-session && swaylock -f -c 000000 -i $background
-# set $lockman exec bash ~/.config/scripts/lockman.sh
+# set $locknow swayidle timeout 3 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' & $locking && kill %%
 
 # clipboard history
 set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
