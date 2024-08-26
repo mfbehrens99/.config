@@ -5,6 +5,7 @@ exec_always mako
 exec $wlsunset
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec keepassxc
+exec nextcloud
 
 assign [class="whatsdesk"] workspace $ws0
 assign [class="Signal"] workspace $ws0
