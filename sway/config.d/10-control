@@ -154,3 +154,4 @@ $bindsym $mod+less exec $clipboard
 $bindsym $mod+e exec $files
 $bindsym $mod+l exec $locking
 $bindsym $mod+c exec $calculator
+$bindsym $mod+k exec keepassxc
