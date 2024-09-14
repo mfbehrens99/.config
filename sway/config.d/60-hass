@@ -8,6 +8,7 @@ mode $mode_hass {
     $bindsym --locked s mode "default", exec $hass services/scene/turn_on scene.schreibtisch
     $bindsym --locked y mode "default", exec $hass services/scene/turn_on scene.tabletmodus
     $bindsym --locked d mode "default", exec $hass services/scene/turn_on scene.licht_aus
+    $bindsym --locked t mode "default", exec $hass services/scene/turn_on scene.tag
     $bindsym --locked n mode "default", exec $hass services/input_boolean/toggle input_boolean.nachtmodus
 
     $bindsym --locked b mode "default", exec $hass services/automation/trigger automation.boxen_toggle
