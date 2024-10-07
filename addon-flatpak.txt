@@ -1,0 +1,9 @@
+com.discordapp.Discord
+io.github.shiftey.Desktop
+io.github.Qalculate
+org.gnome.Fractal
+org.gnome.World.Iotas
+org.keepassxc.KeePassXC
+org.signal.Signal
+org.telegram.desktop
+org.mozilla.Thunderbird

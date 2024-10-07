@@ -13,4 +13,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="davs://nextcloud.toterholunder.de/remote.php/dav/files/1656823d-d15d-4a3e-b12c-e9554e60a34f" added="2024-09-17T23:01:13.674502Z" modified="2024-09-17T23:01:13.674505Z" visited="2024-09-17T23:01:13.674502Z">
+    <title>1656823d-d15d-4a3e-b12c-e9554e60a34f</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2024-09-17T23:01:13.674503Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

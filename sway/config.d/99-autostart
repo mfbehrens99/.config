@@ -4,7 +4,7 @@ exec_always $autotiling
 exec_always mako
 exec $wlsunset
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec keepassxc
+exec flatpak run org.keepassxc.KeePassXC
 exec nextcloud --background
 
 assign [class="whatsdesk"] workspace $ws0
@@ -14,19 +14,19 @@ assign [class="discord"] workspace $ws0
 assign [class="Element"] workspace $ws0
 
 exec whatsdesk
-exec signal-desktop
-exec telegram-desktop
-exec discord
-exec element-desktop
+exec flatpak run org.signal.Signal
+exec flatpak run org.telegram.desktop
+exec flatpak run com.discordapp.Discord
+exec flatpak run org.gnome.Fractal
 
-assign [class="firefox"] workspace $ws1
+assign [app_id="firefox"] workspace $ws1
 exec firefox
 
-assign [class="thunderbird"] workspace $ws2
-exec thunderbird
+assign [app_id="org.mozilla.Thunderbird"] workspace $ws2
+exec flatpak run org.mozilla.Thunderbird
 
-assign [class="Logseq"] workspace $ws3
-exec logseq
+assign [app_id="org.gnome.World.Iotas"] workspace $ws3
+exec flatpak run org.gnome.World.Iotas
 
 # Idle
 exec_always pgrep swayidle || swayidle -w \
@@ -37,6 +37,7 @@ exec_always pgrep swayidle || swayidle -w \
                before-sleep "$locking"
 
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway MOZ_DBUS_REMOTE
+
 # Does not work
-#for_window [class="Firefox"] inhibit_idle fullscreen # xwayland version
-#for_window [app_id="firefox"] inhibit_idle fullscreen # wayland vesion
+for_window [app_id="firefox"] inhibit_idle fullscreen # wayland vesion

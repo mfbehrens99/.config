@@ -18,7 +18,6 @@ less
 mako
 nautilus
 network-manager-applet
-opendoas
 openssh
 pavucontrol
 pipewire-alsa
@@ -26,9 +25,9 @@ pipewire-media-session
 pipewire-pulse
 plymouth
 polkit-gnome
-qalculate-qt
 rofi
 slurp
+sudo
 sway
 swaybg
 swayidle

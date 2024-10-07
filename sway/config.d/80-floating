@@ -1,5 +1,5 @@
 for_window [app_id="blueman-manager"] floating enabled
-for_window [app_id="qalculate-qt"] floating enabled
+for_window [app_id="qalculate-gtk"] floating enabled
 for_window [app_id="pavucontrol"] floating enabled
 for_window [app_id="nm-connection-editor"] floating enabled
 for_window [app_id="org.keepassxc.KeePassXC" title="KeePassXC - Passkey-Anmeldedaten"] floating enabled
