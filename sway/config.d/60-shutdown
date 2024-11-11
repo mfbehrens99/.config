@@ -23,19 +23,19 @@ mode --pango_markup $mode_shutdown {
     $bindsym e exec $purge_cliphist; exec loginctl terminate-user $USER
 
     # suspend
-    $bindsym u mode "default", exec systemctl suspend
+    $bindsym u mode "default"; exec $hass_off; exec systemctl suspend
 
     # hibernate
-    $bindsym h mode "default", exec systemctl hibernate
+    $bindsym h mode "default"; exec $hass_off; exec systemctl hibernate
 
     # shutdown
-    $bindsym s exec $purge_cliphist; exec systemctl poweroff
+    $bindsym s exec $purge_cliphist; exec $hass_off; exec systemctl poweroff
 
     # reboot
     $bindsym r exec $purge_cliphist; exec systemctl reboot
 
     # change user
-    $bindsym c mode "default", exec gdmflexiserver --startnew
+    $bindsym c mode "default"; exec gdmflexiserver --startnew
 
     # Return to default mode.
     $bindsym Escape mode "default"

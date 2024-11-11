@@ -40,10 +40,10 @@ $bindsym $mod+$down focus down
 $bindsym $mod+$up focus up
 $bindsym $mod+$right focus right
 
-# $bindsym $mod+$left_alt focus left
-# $bindsym $mod+$down_alt focus down
-# $bindsym $mod+$up_alt focus up
-# $bindsym $mod+$right_alt focus right
+$bindsym $mod+$left_alt focus left
+$bindsym $mod+$down_alt focus down
+$bindsym $mod+$up_alt focus up
+$bindsym $mod+$right_alt focus right
 
 ## Navigation // Move focused window // $mod + Shift + ↑ ↓ ← → ##
 $bindsym $mod+Shift+$left move left
@@ -51,10 +51,10 @@ $bindsym $mod+Shift+$down move down
 $bindsym $mod+Shift+$up move up
 $bindsym $mod+Shift+$right move right
 
-# $bindsym $mod+Shift+$left_alt move left
-# $bindsym $mod+Shift+$down_alt move down
-# $bindsym $mod+Shift+$up_alt move up
-# $bindsym $mod+Shift+$right_alt move right
+$bindsym $mod+Shift+$left_alt move left
+$bindsym $mod+Shift+$down_alt move down
+$bindsym $mod+Shift+$up_alt move up
+$bindsym $mod+Shift+$right_alt move right
 
 ## Navigation // Move focused workspace // $mod + Alt + ↑ ↓ ← → ##
 $bindsym $mod+Alt+$right move workspace to output right
@@ -62,10 +62,10 @@ $bindsym $mod+Alt+$left move workspace to output left
 $bindsym $mod+Alt+$down move workspace to output down
 $bindsym $mod+Alt+$up move workspace to output up
 
-# $bindsym $mod+Alt+$right_alt move workspace to output right
-# $bindsym $mod+Alt+$left_alt move workspace to output left
-# $bindsym $mod+Alt+$down_alt move workspace to output down
-# $bindsym $mod+Alt+$up_alt move workspace to output up
+$bindsym $mod+Alt+$right_alt move workspace to output right
+$bindsym $mod+Alt+$left_alt move workspace to output left
+$bindsym $mod+Alt+$down_alt move workspace to output down
+$bindsym $mod+Alt+$up_alt move workspace to output up
 
 ## Navigation // Switch to the last recently used workspace ##
 $bindsym $alt_mod+Tab workspace back_and_forth
@@ -145,14 +145,14 @@ $bindsym $mod+space focus mode_toggle
 ## Navigation // Swap focus to the parent window ##
 $bindsym $mod+a focus parent
 
-$bindsym $mod+m bar hidden_state toggle
+# $bindsym $mod+m bar hidden_state toggle
 
 # Copy paste
 $bindsym $mod+less exec $clipboard
 
 # Hotkeys for programs
 $bindsym $mod+e exec $files
-$bindsym $mod+l exec $locking
+# $bindsym $mod+l exec $locking
 $bindsym --locked $mod+shift+c exec gdmflexiserver --startnew
 $bindsym $mod+c exec $calculator
-$bindsym $mod+k exec flatpak run org.keepassxc.KeePassXC
+$bindsym $mod+m exec flatpak run org.keepassxc.KeePassXC

@@ -11,7 +11,7 @@ assign [class="whatsdesk"] workspace $ws0
 assign [class="Signal"] workspace $ws0
 assign [app_id="org.telegram.desktop"] workspace $ws0
 assign [class="discord"] workspace $ws0
-assign [class="Element"] workspace $ws0
+assign [app_id="org.gnome.Fractal"] workspace $ws0
 
 exec whatsdesk
 exec flatpak run org.signal.Signal
@@ -25,8 +25,8 @@ exec firefox
 assign [app_id="org.mozilla.Thunderbird"] workspace $ws2
 exec flatpak run org.mozilla.Thunderbird
 
-assign [app_id="org.gnome.World.Iotas"] workspace $ws3
-exec flatpak run org.gnome.World.Iotas
+assign [class="obsidian"] workspace $ws3
+exec flatpak run md.obsidian.Obsidian
 
 # Idle
 exec_always pgrep swayidle || swayidle -w \

@@ -1,9 +1,14 @@
 com.discordapp.Discord
+com.github.tchx84.Flatseal
+com.spotify.Client
+com.usebottles.bottles
 io.github.shiftey.Desktop
 io.github.Qalculate
+md.obsidian.Obsidian
+org.chromium.Chromium
+org.gnome.Boxes
 org.gnome.Fractal
-org.gnome.World.Iotas
 org.keepassxc.KeePassXC
+org.mozilla.Thunderbird
 org.signal.Signal
 org.telegram.desktop
-org.mozilla.Thunderbird

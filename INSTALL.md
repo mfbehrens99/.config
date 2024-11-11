@@ -26,7 +26,7 @@ arch-chroot /mnt/root
 
 ## Install Sway
 ```
-pacman -S git openssh opendoas firefox foot sway
+pacman -S git openssh sudo firefox foot sway
 ```
 
 ?? not sure if this is needed

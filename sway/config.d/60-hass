@@ -1,18 +1,20 @@
 set $mode_hass "hass"
-set $hass ~/.config/scripts/hass.sh
+set $hass "/home/michi/.config/scripts/hass.sh"
+
+set $hass_off "$hass services/automation/trigger automation.pc_toggle"
 
 mode $mode_hass {
     # Execute Scenes
-    $bindsym --locked a mode "default", exec $hass services/scene/turn_on scene.zimmer_dunkel
-    $bindsym --locked x mode "default", exec $hass services/scene/turn_on scene.zimmer_hell
-    $bindsym --locked s mode "default", exec $hass services/scene/turn_on scene.schreibtisch
-    $bindsym --locked y mode "default", exec $hass services/scene/turn_on scene.tabletmodus
-    $bindsym --locked d mode "default", exec $hass services/scene/turn_on scene.licht_aus
-    $bindsym --locked t mode "default", exec $hass services/scene/turn_on scene.tag
-    $bindsym --locked n mode "default", exec $hass services/input_boolean/toggle input_boolean.nachtmodus
+    $bindsym --locked a mode "default"; exec $hass services/scene/turn_on scene.zimmer_dunkel
+    $bindsym --locked x mode "default"; exec $hass services/scene/turn_on scene.zimmer_hell
+    $bindsym --locked s mode "default"; exec $hass services/scene/turn_on scene.schreibtisch
+    $bindsym --locked y mode "default"; exec $hass services/scene/turn_on scene.tabletmodus
+    $bindsym --locked d mode "default"; exec $hass services/scene/turn_on scene.licht_aus
+    $bindsym --locked t mode "default"; exec $hass services/scene/turn_on scene.tag
+    $bindsym --locked n mode "default"; exec $hass services/input_boolean/toggle input_boolean.nachtmodus
 
-    $bindsym --locked b mode "default", exec $hass services/automation/trigger automation.boxen_toggle
-    $bindsym --locked less mode "default", exec $hass services/automation/trigger automation.boxen_toggle
+    $bindsym --locked b mode "default"; exec $hass services/automation/trigger automation.boxen_toggle
+    $bindsym --locked less mode "default"; exec $hass services/automation/trigger automation.boxen_toggle
     
     # Return to default mode
     $bindsym --locked Return mode "default"

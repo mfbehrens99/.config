@@ -5,6 +5,7 @@ bluez-utils
 brightnessctl
 btrfs-progs
 cliphist
+flatpak
 gdm
 git
 gnome-console
@@ -16,6 +17,7 @@ imv
 iwd
 less
 mako
+morewaita-icon-theme
 nautilus
 network-manager-applet
 openssh
