@@ -70,10 +70,16 @@ $bindsym $mod+Alt+$up_alt move workspace to output up
 ## Navigation // Switch to the last recently used workspace ##
 $bindsym $alt_mod+Tab workspace back_and_forth
 
-bindsym $mod+control+Right workspace next
-bindsym $mod+control+Left workspace prev
+bindsym $mod+control+$left move workspace to output left
+bindsym $mod+control+$up workspace prev
+bindsym $mod+control+$down workspace next
+bindsym $mod+control+$right move workspace to output right
 
-#
+bindsym $mod+control+$left_alt move workspace to output left
+bindsym $mod+control+$down_alt workspace next
+bindsym $mod+control+$up_alt workspace prev
+bindsym $mod+control+$right_alt move workspace to output right
+
 # Workspaces:
 set $ws1 1
 set $ws2 2
