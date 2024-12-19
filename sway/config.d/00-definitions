@@ -39,7 +39,7 @@ set $locking loginctl lock-session && swaylock -f -c 000000 -i $background
 set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
 set $clipboard-del cliphist list | rofi -dmenu -p "Select item to delete" -lines 10 -width 35 | cliphist delete
 
-set $screenshot slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+set $screenshot slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Bildschirmfotos/$(date +'%Y-%m-%d-%H%M%S.png')
 
 set $volume_down pactl set-sink-volume @DEFAULT_SINK@ -2% & pactl set-sink-mute @DEFAULT_SINK@ off
 set $volume_up pactl set-sink-volume @DEFAULT_SINK@ +2% & pactl set-sink-mute @DEFAULT_SINK@ off
