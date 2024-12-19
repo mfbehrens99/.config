@@ -71,13 +71,13 @@ $bindsym $mod+Alt+$up_alt move workspace to output up
 $bindsym $alt_mod+Tab workspace back_and_forth
 
 bindsym $mod+control+$left move workspace to output left
-bindsym $mod+control+$up workspace prev
-bindsym $mod+control+$down workspace next
+bindsym $mod+control+$up move workspace to output up
+bindsym $mod+control+$down move workspace to output down
 bindsym $mod+control+$right move workspace to output right
 
 bindsym $mod+control+$left_alt move workspace to output left
-bindsym $mod+control+$down_alt workspace next
-bindsym $mod+control+$up_alt workspace prev
+bindsym $mod+control+$up_alt move workspace to output up
+bindsym $mod+control+$down_alt move workspace to output down
 bindsym $mod+control+$right_alt move workspace to output right
 
 # Workspaces:

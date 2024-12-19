@@ -45,7 +45,7 @@ fi
 Create symlinks from the dotfiles repository to your `.config` folder
 
 ```shell
-ln -s ~/dotfiles/{environment.d,gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset,mimeapps.list,user-dirs.dirs,user-dirs.locale} ~/.config
+ln -s ~/.config/dotfiles/{environment.d,gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset,mimeapps.list,user-dirs.dirs,user-dirs.locale} ~/.config
 ```
 
 ## Snapper
@@ -88,4 +88,3 @@ systemctl enable --now btrfs-defrag.timer
 systemctl enable --now btrfs-scrub.timer
 systemctl enable --now btrfs-trim.timer
 ```
-
