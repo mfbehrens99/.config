@@ -23,7 +23,7 @@ set $bindsym bindsym --to-code
 set $unbindsym unbindsym --to-code
 
 # background
-set $background /home/michi/Bilder/Background/IMG_0030.jpg
+set $background ~/Bilder/Hintergrundbilder/IMG_0030.jpg
 
 # Your preferred terminal emulator
 set $term kgx
