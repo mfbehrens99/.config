@@ -1,14 +1,24 @@
 [Default Applications]
 video/mpeg=vlc.desktop
-application/vnd.rar=org.gnome.Nautilus.desktop
-application/zip=org.gnome.Nautilus.desktop
+application/vnd.rar=org.gnome.FileRoller.desktop
+application/zip=org.gnome.FileRoller.desktop
+image/jpeg=imv-dir.desktop
+application/pdf=firefox.desktop
 text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
+video/mp4=vlc.desktop
+image/tiff=imv-dir.desktop
+image/png=imv-dir.desktop
+video/x-ms-wmv=vlc.desktop
 
 [Added Associations]
 video/mpeg=vlc.desktop;
-application/zip=org.gnome.Nautilus.desktop;
-application/xml=code-oss.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+image/jpeg=imv-dir.desktop;
+video/mp4=vlc.desktop;
+image/tiff=imv-dir.desktop;
+image/png=imv-dir.desktop;
+video/x-ms-wmv=vlc.desktop;
