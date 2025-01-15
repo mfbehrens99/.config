@@ -26,7 +26,7 @@ set $unbindsym unbindsym --to-code
 set $background ~/Bilder/Hintergrundbilder/IMG_0030.jpg
 
 # Your preferred terminal emulator
-set $term kgx
+set $term ghostty
 
 # Your preferred application launcher
 set $menu rofi -show combi | xargs swaymsg exec --
