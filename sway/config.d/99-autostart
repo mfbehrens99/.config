@@ -1,7 +1,6 @@
 exec_always blueman-applet
 exec_always nm-applet
 exec_always $autotiling
-exec_always mako
 exec $wlsunset
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec flatpak run org.keepassxc.KeePassXC
@@ -39,5 +38,6 @@ exec_always pgrep swayidle || swayidle -w \
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway MOZ_DBUS_REMOTE
 
-# Does not work
-for_window [app_id="firefox"] inhibit_idle fullscreen # wayland vesion
+# Idle inhibit all fullscreen applications
+for_window [class="."] inhibit_idle fullscreen
+for_window [app_id="."] inhibit_idle fullscreen

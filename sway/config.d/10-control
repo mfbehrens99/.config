@@ -158,7 +158,7 @@ $bindsym $mod+less exec $clipboard
 
 # Hotkeys for programs
 $bindsym $mod+e exec $files
-# $bindsym $mod+l exec $locking
 $bindsym --locked $mod+shift+c exec gdmflexiserver --startnew
 $bindsym $mod+c exec $calculator
 $bindsym $mod+m exec flatpak run org.keepassxc.KeePassXC
+$bindsym $mod+n exec swaync-client -t
