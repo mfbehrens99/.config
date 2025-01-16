@@ -9,9 +9,22 @@ titlebar_padding 1
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
   gsettings set org.gnome.desktop.interface gtk-application-prefer-dark-theme true
-  gsettings set org.gnome.desktop.interface icon-theme MoreWaita
+  gsettings set org.gnome.desktop.interface icon-theme candy-icons
   gsettings set org.gnome.desktop.interface cursor-theme Adwaita
 }
 
 # Default wallpaper
 output * bg $background fill
+
+# Places
+exec gio set ~/git/ metadata::custom-icon-name folder-git
+exec gio set ~/Karten/ metadata::custom-icon-name folder-html
+exec gio set ~/Nextcloud/ metadata::custom-icon-name folder-cloud
+exec gio set ~/Schreibtisch/ metadata::custom-icon-name folder-desktop
+exec gio set ~/Spiele/ metadata::custom-icon-name folder-games
+exec gio set ~/Nextcloud/Bilder/ metadata::custom-icon-name folder-pictures
+exec gio set ~/Nextcloud/Cosimicha/ metadata::custom-icon-name folder-public
+exec gio set ~/Nextcloud/Dokumente/ metadata::custom-icon-name folder-documents
+exec gio set ~/Nextcloud/Familie/ metadata::custom-icon-name folder-public
+exec gio set ~/Nextcloud/Notizen/ metadata::custom-icon-name folder-notes
+exec gio set ~/Nextcloud/Schreibtisch/ metadata::custom-icon-name folder-desktop
