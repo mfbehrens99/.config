@@ -12,8 +12,6 @@ set $mode_shutdown "\
 <span foreground='$color10'>(<b>r</b>)</span>reboot \
 </span>"
 
-set $purge_cliphist [ $purge_cliphist_logout == 'true' ] && rm -f $HOME/.cache/cliphist/db || exit 0
-
 mode --pango_markup $mode_shutdown {
     # lock
     $bindsym l mode "default", exec $locking

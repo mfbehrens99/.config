@@ -1,47 +1,61 @@
 # SETUP ARCH
 
-```loadkeys de```
+> [!WARNING]
+> Folge dem Guide im Arch Wiki, da dieser Guide nur grob zusammenfässt
+>
+> [https://wiki.archlinux.org/title/Installation_guide](https://wiki.archlinux.org/title/Installation_guide)
 
-```ip link```
+```sh
+loadkeys de
+
+# Falls WLAN:
+ip link
+```
 
 List all partitions: `lsblk`
 
 ## Setup Filesystem
 
-```cryptsetup luksEncrypt```
+```sh
+# Setup Diskencryption
+cryptsetup luksFormat ...
+cryptsetup luksOpen /dev/... main
 
-luksopen
+# Create a btrfs filesystem
+mkfs.btrfs /dev/mapper/main
+mount /dev/mapper/main /mnt/btrfs
+btrfs subvol create /mnt/btrfs/@arch
+btrfs subvol create /mnt/btrfs/@home
 
-btrfs
-btrfs subvols
+# Mount drives
+mount /dev/mapper/main -o subvol=@arch /mnt/arch
+mount /dev/mapper/main -o subvol=@home /mnt/arch/home
+mount /dev/... /mnt/boot
 
-mount btrfs @arch and @home
+# Create basic system
+pacstrap /mnt/arch base base-devel linux linux-firmware git 
 
-pacstrap
+genfstab -U /mnt/arch /mnt/arch/etc/fstab
 
-```bash
+# Chroot into new system
 arch-chroot /mnt/root
 ```
 
-## Install Sway
+## Install basics
 
+```sh
+pacman -S openssh sudo firefox ghostty sway gdm
 ```
-pacman -S git openssh sudo firefox foot sway
-```
 
-?? not sure if this is needed
-```systemctl enable --now seatd```
+Start Gnome display manager:
 
-Add this code to your bash profile:
-
-```shell
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec sway
-fi
+```sh
+systemctl enable --now gdm
 ```
 
 ## Dotfiles
 
+Clone your dotfiles to your `.config` folder.
 Create symlinks from the dotfiles repository to your `.config` folder
 
 ```shell
@@ -49,6 +63,9 @@ ln -s ~/.config/dotfiles/{environment.d,gtk-3.0,gtk-4.0,libinput-gestures,mako,r
 ```
 
 ## Snapper
+
+> [!NOTE]
+> You can also use btrfs-assistant to setup btrfs
 
 Mount btrfs root
 

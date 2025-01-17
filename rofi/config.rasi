@@ -1,6 +1,37 @@
 configuration {
- modi: "window,drun,ssh,combi";
- font: "hack 10";
- combi-modi: "window,drun,ssh";
- }
-@theme "theme"
+  // modi: "window,drun,combi";
+  font: "Sans Regular 15";
+  show-icons: true;
+  combi-modi: "window,drun";
+  display-combi: " 󰍉 ";
+  display-drun: "Starte";
+  display-window: "Gehe zu";
+  run-command: "{cmd}";
+  drun-display-format: "{name}";
+  window-format: "{title}";
+}
+
+
+@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
+
+window {
+  height: 50%;
+    width:    200mm;
+  location: center;
+  border:  1mm;
+  border-radius:    15mm;
+  anchor: center;
+}
+
+element-icon {
+  size: 16mm;
+}
+
+listview {
+  columns: 9;
+}
+
+icon-current-entry {
+  size: 30mm;
+  margin: 0mm 0mm 7mm 0mm;
+}

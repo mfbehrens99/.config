@@ -1,11 +1,18 @@
+# Run system shit
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway MOZ_DBUS_REMOTE
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Run system applets
 exec_always blueman-applet
 exec_always nm-applet
 exec_always $autotiling
 exec $wlsunset
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Run background programs
 exec flatpak run org.keepassxc.KeePassXC
 exec nextcloud --background
 
+# Autostart programs
 assign [class="whatsdesk"] workspace $ws0
 assign [class="Signal"] workspace $ws0
 assign [app_id="org.telegram.desktop"] workspace $ws0
@@ -27,17 +34,10 @@ exec flatpak run org.mozilla.Thunderbird
 assign [class="obsidian"] workspace $ws3
 exec flatpak run md.obsidian.Obsidian
 
-# Idle
+# Run swayidle
 exec_always pgrep swayidle || swayidle -w \
                timeout 400 'notify-send -t 5000 "PC wird gesperrt" "Der PC wird in 1 Minute gesperrt."' \
                timeout 500 "$locking" \
                timeout 600 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
                before-sleep "$locking"
-
-
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway MOZ_DBUS_REMOTE
-
-# Idle inhibit all fullscreen applications
-for_window [class="."] inhibit_idle fullscreen
-for_window [app_id="."] inhibit_idle fullscreen

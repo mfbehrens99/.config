@@ -29,15 +29,16 @@ set $background ~/Bilder/Hintergrundbilder/IMG_0030.jpg
 set $term ghostty
 
 # Your preferred application launcher
-set $menu rofi -show combi | xargs swaymsg exec --
+set $menu rofi -show combi # | xargs swaymsg exec --
 
 # Locking
 set $locking loginctl lock-session && swaylock -f -c 000000 -i $background
 # set $locknow swayidle timeout 3 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' & $locking && kill %%
 
 # clipboard history
-set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy
+set $clipboard cliphist list | rofi -dmenu -p "Select item to copy" -lines 10 -width 35 -no-config | cliphist decode | wl-copy
 set $clipboard-del cliphist list | rofi -dmenu -p "Select item to delete" -lines 10 -width 35 | cliphist delete
+set $purge_cliphist [ $purge_cliphist_logout == 'true' ] && rm -f $HOME/.cache/cliphist/db || exit 0
 
 set $screenshot slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Bildschirmfotos/$(date +'%Y-%m-%d-%H%M%S.png')
 

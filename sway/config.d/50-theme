@@ -17,14 +17,22 @@ exec_always {
 output * bg $background fill
 
 # Places
-exec gio set ~/git/ metadata::custom-icon-name folder-git
-exec gio set ~/Karten/ metadata::custom-icon-name folder-html
-exec gio set ~/Nextcloud/ metadata::custom-icon-name folder-cloud
-exec gio set ~/Schreibtisch/ metadata::custom-icon-name folder-desktop
-exec gio set ~/Spiele/ metadata::custom-icon-name folder-games
-exec gio set ~/Nextcloud/Bilder/ metadata::custom-icon-name folder-pictures
-exec gio set ~/Nextcloud/Cosimicha/ metadata::custom-icon-name folder-public
-exec gio set ~/Nextcloud/Dokumente/ metadata::custom-icon-name folder-documents
-exec gio set ~/Nextcloud/Familie/ metadata::custom-icon-name folder-public
-exec gio set ~/Nextcloud/Notizen/ metadata::custom-icon-name folder-notes
-exec gio set ~/Nextcloud/Schreibtisch/ metadata::custom-icon-name folder-desktop
+exec_always gio set ~/git/ metadata::custom-icon-name folder-git
+exec_always gio set ~/Karten/ metadata::custom-icon-name folder-html
+exec_always gio set ~/Nextcloud/ metadata::custom-icon-name folder-cloud
+exec_always gio set ~/Schreibtisch/ metadata::custom-icon-name folder-desktop
+exec_always gio set ~/Spiele/ metadata::custom-icon-name folder-games
+exec_always gio set ~/Dokumente/Dokumente/ metadata::custom-icon-name folder-documents
+exec_always gio set ~/Dokumente/Finanzen/ metadata::custom-icon-name folder-money
+exec_always gio set ~/Dokumente/Noten/ metadata::custom-icon-name folder-music
+exec_always gio set ~/Dokumente/OpenStreetMap/ metadata::custom-icon-name folder-html
+exec_always gio set ~/Dokumente/Passwörter/ metadata::custom-icon-name folder-encrypted
+exec_always gio set ~/Dokumente/Projekte/ metadata::custom-icon-name folder-development
+exec_always gio set ~/Dokumente/Temporär/ metadata::custom-icon-name folder-temp
+exec_always gio set ~/Nextcloud/Bilder/ metadata::custom-icon-name folder-pictures
+exec_always gio set ~/Nextcloud/Cosimicha/ metadata::custom-icon-name folder-public
+exec_always gio set ~/Nextcloud/Dokumente/ metadata::custom-icon-name folder-documents
+exec_always gio set ~/Nextcloud/Familie/ metadata::custom-icon-name folder-public
+exec_always gio set ~/Nextcloud/Notizen/ metadata::custom-icon-name folder-notes
+exec_always gio set ~/Nextcloud/Schreibtisch/ metadata::custom-icon-name folder-desktop
+

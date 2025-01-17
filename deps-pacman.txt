@@ -35,6 +35,8 @@ swaybg
 swayidle
 systemd-resolvconf
 ttf-font-awesome
+ttf-hanazono
+ttf-liberation-mono-nerd
 ttf-nerd-fonts-symbols
 waybar
 wl-clipboard
