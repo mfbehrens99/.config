@@ -1,0 +1,6 @@
+focus_follows_mouse always
+focus_on_window_activation focus
+
+# Idle inhibit all fullscreen applications
+for_window [class="."] inhibit_idle fullscreen
+for_window [app_id="."] inhibit_idle fullscreen
