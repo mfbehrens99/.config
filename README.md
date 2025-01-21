@@ -1,8 +1,11 @@
 # DOTFILES
 
 ## System maintenance
+
 ### Delete unused dependencies
-```pacman -Rsn $(pacman -Qdtq)```
 
-```pacman -Scc```
-
+```sh
+sudo pacman -Rsn $(pacman -Qdtq)
+sudo pacman -Syu
+sudo pacman -Scc
+```

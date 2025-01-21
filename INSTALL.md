@@ -56,10 +56,24 @@ systemctl enable --now gdm
 ## Dotfiles
 
 Clone your dotfiles to your `.config` folder.
+
+```sh
+cd ~/.config/
+git clone git@github.com:mfbehrens/dotfiles.git
+cd dotfiles/
+```
+
 Create symlinks from the dotfiles repository to your `.config` folder
 
-```shell
+```sh
 ln -s ~/.config/dotfiles/{environment.d,gtk-3.0,gtk-4.0,libinput-gestures,mako,rofi,scripts,sway,swaylock,waybar,wlsunset,mimeapps.list,user-dirs.dirs,user-dirs.locale} ~/.config
+```
+
+Install deps from file
+
+```sh
+sudo pacman -S --needed - < .config/dotfiles/deps-pacman.txt
+sudo yay -S --needed - < .config/dotfiles/deps-yay.txt
 ```
 
 ## Snapper
@@ -69,27 +83,27 @@ ln -s ~/.config/dotfiles/{environment.d,gtk-3.0,gtk-4.0,libinput-gestures,mako,r
 
 Mount btrfs root
 
-```
+```sh
 mount /dev/mapper/main /mnt/btrfs
 ```
 
 Create a snapper config
 
-```shell
+```sh
 snapper -c arch create-config /mnt/btrfs/@arch
 snapper -c home create-config /mnt/btrfs/@home
 ```
 
 Edit `/etc/snapper/configs/arch` to set how often the snapper should take a snapshot.
 
-```shell
+```sh
 systemctl enable --now snapper-timeline.timer
 systemctl enable --now snapper-cleanup.timer
 ```
 
 Check if everything worked:
 
-```shell
+```sh
 snapper list-configs
 snapper list -a
 ```
@@ -99,7 +113,7 @@ snapper list -a
 Install the btrfsmaintenance package with yay. All information can be read in the `README.md`.
 Enable all the services the package provides:
 
-```
+```sh
 systemctl enable --now btrfs-balance.timer
 systemctl enable --now btrfs-defrag.timer
 systemctl enable --now btrfs-scrub.timer

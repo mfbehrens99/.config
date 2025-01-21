@@ -1,3 +1,4 @@
 autotiling
+morewaita-icon-theme
 swaylock-effects
 wlsunset
