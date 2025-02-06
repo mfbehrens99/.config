@@ -58,7 +58,7 @@ set $brightness_up $bctl --exponent=4 set +3%
 set $brightness_down $bctl --exponent=4 set 3%-
 
 set $wlsunset [ -x "$(command -v wlsunset)" ] && $HOME/.config/scripts/sunset.sh "on"
-set $autotiling autotiling -w 1 3 5 7 9
+set $autotiling pgrep autotiling || autotiling
 
 set $calculator flatpak run io.github.Qalculate
 set $files nautilus
